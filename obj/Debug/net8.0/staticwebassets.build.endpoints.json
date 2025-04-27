@@ -1069,6 +1069,170 @@
       ]
     },
     {
+      "Route": "data/2023_final.8groq15oom.csv",
+      "AssetFile": "data/2023_final.csv",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45511403"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/csv"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 19:18:36 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8groq15oom"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34="
+        },
+        {
+          "Name": "label",
+          "Value": "data/2023_final.csv"
+        }
+      ]
+    },
+    {
+      "Route": "data/2023_final.csv",
+      "AssetFile": "data/2023_final.csv",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45511403"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/csv"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 19:18:36 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34="
+        }
+      ]
+    },
+    {
+      "Route": "data/2025_final.8groq15oom.csv",
+      "AssetFile": "data/2025_final.csv",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45511403"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/csv"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 20:03:32 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8groq15oom"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34="
+        },
+        {
+          "Name": "label",
+          "Value": "data/2025_final.csv"
+        }
+      ]
+    },
+    {
+      "Route": "data/2025_final.csv",
+      "AssetFile": "data/2025_final.csv",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45511403"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/csv"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 20:03:32 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34="
+        }
+      ]
+    },
+    {
       "Route": "favicon.ifv42okdf2.png",
       "AssetFile": "favicon.png",
       "Selectors": [],
@@ -1177,7 +1341,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 19:04:43 GMT"
+          "Value": "Sun, 27 Apr 2025 20:07:44 GMT"
         }
       ],
       "EndpointProperties": [
@@ -1222,7 +1386,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 19:04:43 GMT"
+          "Value": "Sun, 27 Apr 2025 20:07:44 GMT"
         }
       ],
       "EndpointProperties": [
