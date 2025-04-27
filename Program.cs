@@ -1,10 +1,20 @@
 using projekt.Components;
+using projekt.Services;
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure logging
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// Register our CsvService
+builder.Services.AddScoped<CsvService>();
 
 var app = builder.Build();
 
@@ -20,6 +30,22 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+
+// Log the WebRootPath
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+logger.LogInformation($"WebRootPath: {app.Environment.WebRootPath}");
+
+// Set up sample data for development
+try
+{
+    logger.LogInformation("Setting up CSV sample data");
+    CsvSetupHelper.EnsureDataDirectoryAndSampleFiles(app.Environment);
+    logger.LogInformation("Sample data setup completed");
+}
+catch (Exception ex)
+{
+    logger.LogError(ex, "Error setting up sample data");
+}
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();

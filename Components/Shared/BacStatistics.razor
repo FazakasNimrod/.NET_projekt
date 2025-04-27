@@ -1,0 +1,143 @@
+﻿@namespace projekt.Components.Shared
+@using projekt.Models
+
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card stat-card bg-primary text-white">
+            <div class="card-body text-center">
+                <h5 class="card-title">Total Students</h5>
+                <p class="display-4">@Results.Count</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card stat-card bg-success text-white">
+            <div class="card-body text-center">
+                <h5 class="card-title">Passed</h5>
+                <p class="display-4">@PassedCount</p>
+                <p class="mb-0">@PassedPercentage.ToString("F1")%</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card stat-card bg-danger text-white">
+            <div class="card-body text-center">
+                <h5 class="card-title">Failed</h5>
+                <p class="display-4">@FailedCount</p>
+                <p class="mb-0">@FailedPercentage.ToString("F1")%</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card stat-card bg-info text-white">
+            <div class="card-body text-center">
+                <h5 class="card-title">Average Score</h5>
+                <p class="display-4">@AverageScore.ToString("F2")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card stat-card">
+            <div class="card-header">
+                <h5 class="mb-0">Top Counties by Pass Rate</h5>
+            </div>
+            <div class="card-body">
+                @if (TopCountiesByPassRate.Any())
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var county in TopCountiesByPassRate.Take(5))
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                @county.Key
+                                <span class="badge bg-success rounded-pill">@county.Value.ToString("F1")%</span>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">No county data available</p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card stat-card">
+            <div class="card-header">
+                <h5 class="mb-0">Top Specializations by Average</h5>
+            </div>
+            <div class="card-body">
+                @if (TopSpecializationsByAverage.Any())
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var spec in TopSpecializationsByAverage.Take(5))
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                @spec.Key
+                                <span class="badge bg-primary rounded-pill">@spec.Value.ToString("F2")</span>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">No specialization data available</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public List<BacResult> Results { get; set; } = new List<BacResult>();
+
+    private int PassedCount => Results.Count(r => r.Passed == 1);
+    private int FailedCount => Results.Count(r => r.Passed == 0);
+    private double PassedPercentage => Results.Any() ? (double)PassedCount / Results.Count * 100 : 0;
+    private double FailedPercentage => Results.Any() ? (double)FailedCount / Results.Count * 100 : 0;
+    private double AverageScore => Results.Any() ? Results.Average(r => r.Average) : 0;
+
+    private Dictionary<string, double> TopCountiesByPassRate
+    {
+        get
+        {
+            return Results
+                .Where(r => !string.IsNullOrEmpty(r.County))
+                .GroupBy(r => r.County)
+                .Where(g => g.Count() >= 10) // Only counties with at least 10 students
+                .Select(g => new
+                {
+                    County = g.Key,
+                    PassRate = (double)g.Count(r => r.Passed == 1) / g.Count() * 100
+                })
+                .OrderByDescending(x => x.PassRate)
+                .ToDictionary(x => x.County ?? "Unknown", x => x.PassRate);
+        }
+    }
+
+    private Dictionary<string, double> TopSpecializationsByAverage
+    {
+        get
+        {
+            return Results
+                .Where(r => !string.IsNullOrEmpty(r.Specialization))
+                .GroupBy(r => r.Specialization)
+                .Where(g => g.Count() >= 10) // Only specializations with at least 10 students
+                .Select(g => new
+                {
+                    Specialization = g.Key,
+                    Average = g.Average(r => r.Average)
+                })
+                .OrderByDescending(x => x.Average)
+                .ToDictionary(x => x.Specialization ?? "Unknown", x => x.Average);
+        }
+    }
+}

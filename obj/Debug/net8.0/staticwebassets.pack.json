@@ -1,0 +1,85 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\projekt.bundle.scp.css",
+      "PackagePath": "staticwebassets\\projekt.rgu0d4egb5.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\css\\custom.css",
+      "PackagePath": "staticwebassets\\css\\custom.css"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2014_final.csv",
+      "PackagePath": "staticwebassets\\data\\2014_final.csv"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2015_final.csv",
+      "PackagePath": "staticwebassets\\data\\2015_final.csv"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2016_final.csv",
+      "PackagePath": "staticwebassets\\data\\2016_final.csv"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2017_final.csv",
+      "PackagePath": "staticwebassets\\data\\2017_final.csv"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2018_final.csv",
+      "PackagePath": "staticwebassets\\data\\2018_final.csv"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2019_final.csv",
+      "PackagePath": "staticwebassets\\data\\2019_final.csv"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2020_final.csv",
+      "PackagePath": "staticwebassets\\data\\2020_final.csv"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2021_final.csv",
+      "PackagePath": "staticwebassets\\data\\2021_final.csv"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2022_final.csv",
+      "PackagePath": "staticwebassets\\data\\2022_final.csv"
+    },
+    {
+      "Id": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.projekt.props",
+      "PackagePath": "build\\projekt.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.projekt.props",
+      "PackagePath": "buildMultiTargeting\\projekt.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.projekt.props",
+      "PackagePath": "buildTransitive\\projekt.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.projekt.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.projekt.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

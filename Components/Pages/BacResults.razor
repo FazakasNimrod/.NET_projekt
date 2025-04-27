@@ -1,0 +1,272 @@
+﻿@page "/bac-results"
+@using projekt.Models
+@using projekt.Services
+@using projekt.Components.Shared
+@namespace projekt.Components.Pages
+@inject CsvService CsvService
+@rendermode InteractiveServer
+
+<PageTitle>BAC Results</PageTitle>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar for year selection -->
+        <div class="col-md-3 col-lg-2 sidebar">
+            <h4 class="mb-3">Select Year</h4>
+            <div class="list-group">
+                @if (AvailableYears == null || !AvailableYears.Any())
+                {
+                    <div class="alert alert-warning">No data files found.</div>
+                }
+                else
+                {
+                    @foreach (var year in AvailableYears)
+                    {
+                        <button class="list-group-item list-group-item-action @(year == SelectedYear ? "active" : "")"
+                                @onclick="() => LoadYearData(year)">
+                            BAC Results @year
+                        </button>
+                    }
+                }
+            </div>
+        </div>
+
+        <!-- Main content area -->
+        <div class="col-md-9 col-lg-10 main-content">
+            <h1>Baccalaureate Results @SelectedYear</h1>
+
+            @if (IsLoading)
+            {
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            }
+            else if (Results == null || !Results.Any())
+            {
+                <div class="alert alert-info">
+                    @(SelectedYear == 0 ? "Please select a year to view results." : $"No results found for {SelectedYear}.")
+                </div>
+            }
+            else
+            {
+                <!-- Statistics Component -->
+                <BacStatistics Results="Results" />
+
+                <!-- Tabs for different views -->
+                <ul class="nav nav-tabs mb-3">
+                    <li class="nav-item">
+                        <button class="nav-link @(ActiveTab == "data" ? "active" : "")"
+                                @onclick='() => ActiveTab = "data"'>
+                            Data Table
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link @(ActiveTab == "schools" ? "active" : "")"
+                                @onclick='() => ActiveTab = "schools"'>
+                            Top Schools
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Search bar -->
+                <div class="mb-3">
+                    <div class="input-group">
+                        <span class="input-group-text">Search</span>
+                        <input type="text" class="form-control" placeholder="Search by school, city..."
+                               @bind="SearchTerm" @bind:event="oninput" />
+                    </div>
+                </div>
+
+                @if (ActiveTab == "data")
+                {
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>School</th>
+                                    <th>City</th>
+                                    <th>County</th>
+                                    <th>Specialization</th>
+                                    <th>Average</th>
+                                    <th>Passed</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var result in FilteredResults.Take(DisplayLimit))
+                                {
+                                    <tr>
+                                        <td>
+                                            <a href="/bac-analysis/school/@result.FullSchoolName">
+                                                @result.FullSchoolName
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="/bac-analysis/city/@result.City">
+                                                @result.City
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="/bac-analysis/county/@result.County">
+                                                @result.County
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="/bac-analysis/specialization/@result.Specialization">
+                                                @result.Specialization
+                                            </a>
+                                        </td>
+                                        <td>@result.Average.ToString("F2")</td>
+                                        <td>
+                                            @if (result.Passed == 1)
+                                            {
+                                                <span class="badge bg-success">Yes</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-danger">No</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        @if (FilteredResults.Count > DisplayLimit)
+                        {
+                            <div class="text-center mb-3">
+                                <button class="btn btn-primary" @onclick="LoadMore">
+                                    Load More
+                                </button>
+                                <span class="ms-2 text-muted">
+                                    Showing @DisplayLimit of @FilteredResults.Count results
+                                </span>
+                            </div>
+                        }
+                    </div>
+                }
+                else if (ActiveTab == "schools")
+                {
+                    <div class="row">
+                        @foreach (var school in TopSchools.Take(9))
+                        {
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5 class="card-title mb-0">@school.Name</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>City:</strong> @school.City</p>
+                                        <p><strong>County:</strong> @school.County</p>
+                                        <p><strong>Average:</strong> @school.Average.ToString("F2")</p>
+                                        <p><strong>Pass Rate:</strong> @school.PassRate.ToString("F1")%</p>
+                                        <p><strong>Students:</strong> @school.StudentCount</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .sidebar {
+        background-color: #f8f9fa;
+        padding: 20px;
+        min-height: calc(100vh - 56px);
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+</style>
+
+@code {
+    private List<BacResult>? Results { get; set; }
+    private List<int> AvailableYears { get; set; } = new List<int>();
+    private int SelectedYear { get; set; } = 0;
+    private bool IsLoading { get; set; } = true;
+    private string SearchTerm { get; set; } = "";
+    private int DisplayLimit { get; set; } = 50;
+    private string ActiveTab { get; set; } = "data";
+
+    // School summary class for top schools view
+    private class SchoolSummary
+    {
+        public string Name { get; set; } = "";
+        public string City { get; set; } = "";
+        public string County { get; set; } = "";
+        public double Average { get; set; }
+        public double PassRate { get; set; }
+        public int StudentCount { get; set; }
+    }
+
+    private List<BacResult> FilteredResults =>
+        Results?.Where(r =>
+            string.IsNullOrWhiteSpace(SearchTerm) ||
+            (r.FullSchoolName?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+            (r.City?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+            (r.County?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+            (r.Specialization?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false)
+        ).ToList() ?? new List<BacResult>();
+
+    private List<SchoolSummary> TopSchools
+    {
+        get
+        {
+            if (Results == null || !Results.Any())
+                return new List<SchoolSummary>();
+
+            return Results
+                .Where(r => !string.IsNullOrEmpty(r.FullSchoolName))
+                .GroupBy(r => r.FullSchoolName)
+                .Where(g => g.Count() >= 10) // Only schools with at least 10 students
+                .Select(g => new SchoolSummary
+                    {
+                        Name = g.Key ?? "Unknown",
+                        City = g.First().City ?? "Unknown",
+                        County = g.First().County ?? "Unknown",
+                        Average = g.Average(r => r.Average),
+                        PassRate = (double)g.Count(r => r.Passed == 1) / g.Count() * 100,
+                        StudentCount = g.Count()
+                    })
+                .OrderByDescending(s => s.Average)
+                .ToList();
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        AvailableYears = await CsvService.GetAvailableYearsAsync();
+        IsLoading = false;
+
+        // Automatically load the most recent year if available
+        if (AvailableYears.Any())
+        {
+            await LoadYearData(AvailableYears.Max());
+        }
+    }
+
+    private async Task LoadYearData(int year)
+    {
+        if (SelectedYear == year)
+            return;
+
+        IsLoading = true;
+        SelectedYear = year;
+        DisplayLimit = 50;
+        SearchTerm = "";
+
+        Results = await CsvService.GetBacResultsForYearAsync(year);
+        IsLoading = false;
+    }
+
+    private void LoadMore()
+    {
+        DisplayLimit += 50;
+    }
+}

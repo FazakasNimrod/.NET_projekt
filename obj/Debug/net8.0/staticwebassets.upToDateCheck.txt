@@ -1,0 +1,14 @@
+wwwroot\app.css
+wwwroot\bootstrap\bootstrap.min.css
+wwwroot\bootstrap\bootstrap.min.css.map
+wwwroot\css\custom.css
+wwwroot\data\2014_final.csv
+wwwroot\data\2015_final.csv
+wwwroot\data\2016_final.csv
+wwwroot\data\2017_final.csv
+wwwroot\data\2018_final.csv
+wwwroot\data\2019_final.csv
+wwwroot\data\2020_final.csv
+wwwroot\data\2021_final.csv
+wwwroot\data\2022_final.csv
+wwwroot\favicon.png

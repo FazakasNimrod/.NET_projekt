@@ -1,0 +1,125 @@
+﻿@page "/file-check"
+@using System.IO
+@namespace projekt.Components.Pages
+@inject IWebHostEnvironment Environment
+@rendermode InteractiveServer
+
+<PageTitle>File Check</PageTitle>
+
+<div class="container">
+    <h1>CSV File Check</h1>
+
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Environment Information</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Web Root Path:</strong> @Environment.WebRootPath</p>
+            <p><strong>Data Directory:</strong> @Path.Combine(Environment.WebRootPath, "data")</p>
+            <p><strong>Environment Name:</strong> @Environment.EnvironmentName</p>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Data Directory</h5>
+        </div>
+        <div class="card-body">
+            @{
+                string dataDir = Path.Combine(Environment.WebRootPath, "data");
+                bool dirExists = Directory.Exists(dataDir);
+            }
+
+            <p><strong>Directory Exists:</strong> @dirExists</p>
+
+            @if (dirExists)
+            {
+                var allFiles = Directory.GetFiles(dataDir);
+                var csvFiles = Directory.GetFiles(dataDir, "*_final.csv");
+
+                <p><strong>Total Files in Directory:</strong> @allFiles.Length</p>
+                <p><strong>CSV Files Found:</strong> @csvFiles.Length</p>
+
+                @if (allFiles.Length > 0)
+                {
+                    <h6>All Files:</h6>
+                    <ul class="list-group">
+                        @foreach (var file in allFiles)
+                        {
+                            var fileInfo = new FileInfo(file);
+                            <li class="list-group-item">
+                                @Path.GetFileName(file)
+                                <small class="text-muted">(@fileInfo.Length bytes)</small>
+                            </li>
+                        }
+                    </ul>
+                }
+            }
+            else
+            {
+                <div class="alert alert-warning">
+                    The data directory does not exist!
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Manual File Check</h5>
+        </div>
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter filename to check (e.g., 2014_final.csv)" @bind="FileToCheck">
+                <button class="btn btn-primary" @onclick="CheckFile">Check File</button>
+            </div>
+
+            @if (!string.IsNullOrEmpty(FileCheckResult))
+            {
+                <div class="alert @(FileExists ? "alert-success" : "alert-danger")">
+                    @FileCheckResult
+                </div>
+
+                @if (FileExists && FileContent != null)
+                {
+                    <div>
+                        <h6>File Preview (first 500 characters):</h6>
+                        <pre class="bg-light p-3">@(FileContent.Length > 500 ? FileContent.Substring(0, 500) + "..." : FileContent)</pre>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private string FileToCheck { get; set; } = "2014_final.csv";
+    private string FileCheckResult { get; set; } = "";
+    private bool FileExists { get; set; } = false;
+    private string FileContent { get; set; } = "";
+
+    private void CheckFile()
+    {
+        string filePath = Path.Combine(Environment.WebRootPath, "data", FileToCheck);
+        FileExists = File.Exists(filePath);
+
+        if (FileExists)
+        {
+            FileCheckResult = $"File found: {filePath}";
+            try
+            {
+                // Try to read the first part of the file
+                FileContent = File.ReadAllText(filePath);
+            }
+            catch (Exception ex)
+            {
+                FileContent = $"Error reading file: {ex.Message}";
+            }
+        }
+        else
+        {
+            FileCheckResult = $"File not found: {filePath}";
+            FileContent = "";
+        }
+    }
+}

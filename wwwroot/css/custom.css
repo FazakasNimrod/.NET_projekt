@@ -1,0 +1,82 @@
+﻿/* Custom Styles for BAC Results Application */
+
+/* Sidebar styles */
+.sidebar {
+	transition: all 0.3s;
+}
+
+	.sidebar .list-group-item {
+		border-radius: 0;
+		border-left: 0;
+		border-right: 0;
+		background-color: transparent;
+	}
+
+		.sidebar .list-group-item.active {
+			background-color: #0d6efd;
+			border-color: #0d6efd;
+		}
+
+/* Table styles */
+.table {
+	font-size: 0.9rem;
+}
+
+	.table th {
+		background-color: #f8f9fa;
+		position: sticky;
+		top: 0;
+		z-index: 1;
+	}
+
+.table-hover tbody tr:hover {
+	background-color: rgba(13, 110, 253, 0.1);
+}
+
+/* Search box */
+.input-group .form-control:focus {
+	border-color: #0d6efd;
+	box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Loading spinner */
+.spinner-border {
+	color: #0d6efd;
+	width: 3rem;
+	height: 3rem;
+	margin: 3rem auto;
+}
+
+/* Statistics cards */
+.stat-card {
+	border-radius: 0.5rem;
+	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+	transition: all 0.2s;
+}
+
+	.stat-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	}
+
+/* Custom colors for different result types */
+.passed {
+	color: #198754;
+}
+
+.failed {
+	color: #dc3545;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.sidebar {
+		height: auto !important;
+		min-height: auto !important;
+		padding: 15px;
+	}
+
+	.table {
+		font-size: 0.8rem;
+	}
+}

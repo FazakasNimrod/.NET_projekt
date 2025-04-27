@@ -24,12 +24,32 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/BacCompare.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCYWNDb21wYXJlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/BacDetailedAnalysis.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCYWNEZXRhaWxlZEFuYWx5c2lzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/BacResults.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCYWNSZXN1bHRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/BacUpload.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCYWNVcGxvYWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/FileCheck.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaWxlQ2hlY2sucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/Home.razor]
@@ -42,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Shared/BacStatistics.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcQmFjU3RhdGlzdGljcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/_Imports.razor]

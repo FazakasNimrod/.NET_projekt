@@ -1,0 +1,316 @@
+﻿@page "/bac-analysis/{AnalysisType}/{ItemId}"
+@using projekt.Models
+@using projekt.Services
+@namespace projekt.Components.Pages
+@inject CsvService CsvService
+@rendermode InteractiveServer
+
+<PageTitle>BAC Analysis - @AnalysisType @ItemId</PageTitle>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-lg-2 sidebar">
+            <h4 class="mb-3">Years</h4>
+            <div class="list-group">
+                @if (AvailableYears == null || !AvailableYears.Any())
+                {
+                    <div class="alert alert-warning">No data files found.</div>
+                }
+                else
+                {
+                    @foreach (var year in AvailableYears)
+                    {
+                        <button class="list-group-item list-group-item-action @(year == SelectedYear ? "active" : "")"
+                                @onclick="() => LoadYearData(year)">
+                            @year
+                        </button>
+                    }
+                }
+            </div>
+
+            <div class="mt-4">
+                <a href="/bac-results" class="btn btn-primary btn-sm">
+                    &larr; Back to Results
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-9 col-lg-10 main-content">
+            <h1>@AnalysisType Analysis: @ItemId (@SelectedYear)</h1>
+
+            @if (IsLoading)
+            {
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            }
+            else if (FilteredResults == null || !FilteredResults.Any())
+            {
+                <div class="alert alert-info">
+                    No data available for @AnalysisType @ItemId in @SelectedYear.
+                </div>
+            }
+            else
+            {
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card stat-card bg-primary text-white">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Total Students</h5>
+                                <p class="display-4">@FilteredResults.Count</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card stat-card bg-success text-white">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Passed</h5>
+                                <p class="display-4">@PassedCount</p>
+                                <p class="mb-0">@PassedPercentage.ToString("F1")%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card stat-card bg-danger text-white">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Failed</h5>
+                                <p class="display-4">@FailedCount</p>
+                                <p class="mb-0">@FailedPercentage.ToString("F1")%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card stat-card bg-info text-white">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Average Score</h5>
+                                <p class="display-4">@AverageScore.ToString("F2")</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Grade Distribution</h5>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Grade Range</th>
+                                            <th>Count</th>
+                                            <th>Percentage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var range in GradeRanges)
+                                        {
+                                            <tr>
+                                                <td>@range.Key</td>
+                                                <td>@range.Value</td>
+                                                <td>@((range.Value * 100.0 / FilteredResults.Count).ToString("F1"))%</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Subject Performance</h5>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject</th>
+                                            <th>Average Grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Romanian</td>
+                                            <td>@AverageRomanianGrade.ToString("F2")</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mandatory Subject</td>
+                                            <td>@AverageMandatoryGrade.ToString("F2")</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chosen Subject</td>
+                                            <td>@AverageChosenGrade.ToString("F2")</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Individual Results</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        @if (AnalysisType.ToLower() == "county")
+                                        {
+                                            <th>School</th>
+                                            <th>City</th>
+                                        }
+                                        <th>Specialization</th>
+                                        <th>Romanian</th>
+                                        <th>Mandatory</th>
+                                        <th>Chosen</th>
+                                        <th>Average</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var result in FilteredResults.Take(25))
+                                    {
+                                        <tr>
+                                            @if (AnalysisType.ToLower() == "county")
+                                            {
+                                                <td>@result.FullSchoolName</td>
+                                                <td>@result.City</td>
+                                            }
+                                            <td>@result.Specialization</td>
+                                            <td>@result.RomanianGradeFinal</td>
+                                            <td>@result.MandatoryGradeFinal</td>
+                                            <td>@result.ChosenGradeFinal</td>
+                                            <td class="@(result.Average >= 6.0 ? "text-success" : "text-danger")">
+                                                <strong>@result.Average.ToString("F2")</strong>
+                                            </td>
+                                            <td>
+                                                @if (result.Passed == 1)
+                                                {
+                                                    <span class="badge bg-success">Passed</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-danger">Failed</span>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                        @if (FilteredResults.Count > 25)
+                        {
+                            <div class="text-center">
+                                <span class="text-muted">
+                                    Showing 25 of @FilteredResults.Count records
+                                </span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string AnalysisType { get; set; } = "";
+
+    [Parameter]
+    public string ItemId { get; set; } = "";
+
+    private List<BacResult> AllResults { get; set; } = new List<BacResult>();
+    private List<BacResult> FilteredResults { get; set; } = new List<BacResult>();
+    private List<int> AvailableYears { get; set; } = new List<int>();
+    private int SelectedYear { get; set; } = 0;
+    private bool IsLoading { get; set; } = true;
+
+    // Statistics properties
+    private int PassedCount => FilteredResults.Count(r => r.Passed == 1);
+    private int FailedCount => FilteredResults.Count(r => r.Passed == 0);
+    private double PassedPercentage => FilteredResults.Any() ? (double)PassedCount / FilteredResults.Count * 100 : 0;
+    private double FailedPercentage => FilteredResults.Any() ? (double)FailedCount / FilteredResults.Count * 100 : 0;
+    private double AverageScore => FilteredResults.Any() ? FilteredResults.Average(r => r.Average) : 0;
+
+    private double AverageRomanianGrade => FilteredResults.Any() ? FilteredResults.Average(r => r.RomanianGradeFinal) : 0;
+    private double AverageMandatoryGrade => FilteredResults.Any() ? FilteredResults.Average(r => r.MandatoryGradeFinal) : 0;
+    private double AverageChosenGrade => FilteredResults.Any() ? FilteredResults.Average(r => r.ChosenGradeFinal) : 0;
+
+    private Dictionary<string, int> GradeRanges => new Dictionary<string, int>
+    {
+        { "1.00 - 4.99", FilteredResults.Count(r => r.Average < 5.0) },
+        { "5.00 - 5.99", FilteredResults.Count(r => r.Average >= 5.0 && r.Average < 6.0) },
+        { "6.00 - 6.99", FilteredResults.Count(r => r.Average >= 6.0 && r.Average < 7.0) },
+        { "7.00 - 7.99", FilteredResults.Count(r => r.Average >= 7.0 && r.Average < 8.0) },
+        { "8.00 - 8.99", FilteredResults.Count(r => r.Average >= 8.0 && r.Average < 9.0) },
+        { "9.00 - 10.00", FilteredResults.Count(r => r.Average >= 9.0) }
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        AvailableYears = await CsvService.GetAvailableYearsAsync();
+
+        if (AvailableYears.Any())
+        {
+            await LoadYearData(AvailableYears.Max());
+        }
+        else
+        {
+            IsLoading = false;
+        }
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (SelectedYear > 0)
+        {
+            await FilterResultsByParameter();
+        }
+    }
+
+    private async Task LoadYearData(int year)
+    {
+        IsLoading = true;
+        SelectedYear = year;
+
+        AllResults = await CsvService.GetBacResultsForYearAsync(year);
+        await FilterResultsByParameter();
+
+        IsLoading = false;
+    }
+
+    private async Task FilterResultsByParameter()
+    {
+        if (string.IsNullOrEmpty(AnalysisType) || string.IsNullOrEmpty(ItemId))
+        {
+            FilteredResults = new List<BacResult>();
+            return;
+        }
+
+        // Filter results based on analysis type
+        FilteredResults = AnalysisType.ToLower() switch
+        {
+            "school" => AllResults.Where(r => r.FullSchoolName == ItemId).ToList(),
+            "county" => AllResults.Where(r => r.County == ItemId).ToList(),
+            "city" => AllResults.Where(r => r.City == ItemId).ToList(),
+            "specialization" => AllResults.Where(r => r.Specialization == ItemId).ToList(),
+            _ => new List<BacResult>()
+        };
+
+        await Task.CompletedTask;
+    }
+}
