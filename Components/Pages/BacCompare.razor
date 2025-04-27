@@ -14,7 +14,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Select Years to Compare</h5>
+                    <h5 class="mb-0">Select 2 Years to Compare</h5>
                 </div>
                 <div class="card-body">
                     @if (!AvailableYears.Any())
@@ -23,22 +23,32 @@
                     }
                     else
                     {
+                        <p class="text-muted mb-3">Please select exactly 2 years to compare.</p>
+
                         @foreach (var year in AvailableYears)
                         {
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox"
                                        id="year-@year" value="@year"
                                        checked="@SelectedYears.Contains(year)"
+                                       disabled="@(SelectedYears.Count >= 2 && !SelectedYears.Contains(year))"
                                        @onchange="@(e => ToggleYearSelection(year, e.Value != null && (bool)e.Value))" />
                                 <label class="form-check-label" for="year-@year">@year</label>
                             </div>
                         }
 
                         <div class="mt-3">
-                            <button class="btn btn-primary" @onclick="LoadComparisonData"
-                                    disabled="@(!SelectedYears.Any() || IsLoading)">
-                                Compare Selected Years
-                            </button>
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-primary" @onclick="LoadComparisonData"
+                                        disabled="@(SelectedYears.Count != 2 || IsLoading)">
+                                    Compare Selected Years
+                                </button>
+
+                                @if (SelectedYears.Count != 2)
+                                {
+                                    <span class="ms-3 text-danger">Please select exactly 2 years</span>
+                                }
+                            </div>
                         </div>
                     }
                 </div>
@@ -99,7 +109,10 @@
                                     {
                                         <th class="text-center">@year</th>
                                     }
-                                    <th class="text-center">Change</th>
+                                    @if (SelectedYears.Count == 2)
+                                    {
+                                        <th class="text-center">Change</th>
+                                    }
                                 </tr>
                             </thead>
                             <tbody>
@@ -107,67 +120,109 @@
                                     <td>Total Students</td>
                                     @foreach (var year in SelectedYears.OrderBy(y => y))
                                     {
-                                        <td class="text-center">@YearStats[year].TotalCount</td>
+                                        <td class="text-center">@(YearStats.ContainsKey(year) ? YearStats[year].TotalCount : 0)</td>
                                     }
-                                    <td class="text-center">
-                                        @GetChangeIndicator(YearStats[SelectedYears.Min()].TotalCount,
-                                                 YearStats[SelectedYears.Max()].TotalCount)
-                                    </td>
+                                    @if (SelectedYears.Count == 2)
+                                    {
+                                        var minYear = SelectedYears.Min();
+                                        var maxYear = SelectedYears.Max();
+                                        var startValue = YearStats.ContainsKey(minYear) ? YearStats[minYear].TotalCount : 0;
+                                        var endValue = YearStats.ContainsKey(maxYear) ? YearStats[maxYear].TotalCount : 0;
+
+                                        <td class="text-center">
+                                            @GetChangeIndicator(startValue, endValue)
+                                        </td>
+                                    }
                                 </tr>
                                 <tr>
                                     <td>Pass Rate</td>
                                     @foreach (var year in SelectedYears.OrderBy(y => y))
                                     {
-                                        <td class="text-center">@YearStats[year].PassRate.ToString("F1")%</td>
+                                        <td class="text-center">@(YearStats.ContainsKey(year) ? YearStats[year].PassRate.ToString("F1") : "0.0")%</td>
                                     }
-                                    <td class="text-center">
-                                        @GetChangeIndicator(YearStats[SelectedYears.Min()].PassRate,
-                                                 YearStats[SelectedYears.Max()].PassRate)
-                                    </td>
+                                    @if (SelectedYears.Count == 2)
+                                    {
+                                        var minYear = SelectedYears.Min();
+                                        var maxYear = SelectedYears.Max();
+                                        var startValue = YearStats.ContainsKey(minYear) ? YearStats[minYear].PassRate : 0;
+                                        var endValue = YearStats.ContainsKey(maxYear) ? YearStats[maxYear].PassRate : 0;
+
+                                        <td class="text-center">
+                                            @GetChangeIndicator(startValue, endValue)
+                                        </td>
+                                    }
                                 </tr>
                                 <tr>
                                     <td>Average Score</td>
                                     @foreach (var year in SelectedYears.OrderBy(y => y))
                                     {
-                                        <td class="text-center">@YearStats[year].AverageScore.ToString("F2")</td>
+                                        <td class="text-center">@(YearStats.ContainsKey(year) ? YearStats[year].AverageScore.ToString("F2") : "0.00")</td>
                                     }
-                                    <td class="text-center">
-                                        @GetChangeIndicator(YearStats[SelectedYears.Min()].AverageScore,
-                                                 YearStats[SelectedYears.Max()].AverageScore)
-                                    </td>
+                                    @if (SelectedYears.Count == 2)
+                                    {
+                                        var minYear = SelectedYears.Min();
+                                        var maxYear = SelectedYears.Max();
+                                        var startValue = YearStats.ContainsKey(minYear) ? YearStats[minYear].AverageScore : 0;
+                                        var endValue = YearStats.ContainsKey(maxYear) ? YearStats[maxYear].AverageScore : 0;
+
+                                        <td class="text-center">
+                                            @GetChangeIndicator(startValue, endValue)
+                                        </td>
+                                    }
                                 </tr>
                                 <tr>
                                     <td>Romanian Average</td>
                                     @foreach (var year in SelectedYears.OrderBy(y => y))
                                     {
-                                        <td class="text-center">@YearStats[year].RomanianAverage.ToString("F2")</td>
+                                        <td class="text-center">@(YearStats.ContainsKey(year) ? YearStats[year].RomanianAverage.ToString("F2") : "0.00")</td>
                                     }
-                                    <td class="text-center">
-                                        @GetChangeIndicator(YearStats[SelectedYears.Min()].RomanianAverage,
-                                                 YearStats[SelectedYears.Max()].RomanianAverage)
-                                    </td>
+                                    @if (SelectedYears.Count == 2)
+                                    {
+                                        var minYear = SelectedYears.Min();
+                                        var maxYear = SelectedYears.Max();
+                                        var startValue = YearStats.ContainsKey(minYear) ? YearStats[minYear].RomanianAverage : 0;
+                                        var endValue = YearStats.ContainsKey(maxYear) ? YearStats[maxYear].RomanianAverage : 0;
+
+                                        <td class="text-center">
+                                            @GetChangeIndicator(startValue, endValue)
+                                        </td>
+                                    }
                                 </tr>
                                 <tr>
                                     <td>Mandatory Subject Average</td>
                                     @foreach (var year in SelectedYears.OrderBy(y => y))
                                     {
-                                        <td class="text-center">@YearStats[year].MandatoryAverage.ToString("F2")</td>
+                                        <td class="text-center">@(YearStats.ContainsKey(year) ? YearStats[year].MandatoryAverage.ToString("F2") : "0.00")</td>
                                     }
-                                    <td class="text-center">
-                                        @GetChangeIndicator(YearStats[SelectedYears.Min()].MandatoryAverage,
-                                                 YearStats[SelectedYears.Max()].MandatoryAverage)
-                                    </td>
+                                    @if (SelectedYears.Count == 2)
+                                    {
+                                        var minYear = SelectedYears.Min();
+                                        var maxYear = SelectedYears.Max();
+                                        var startValue = YearStats.ContainsKey(minYear) ? YearStats[minYear].MandatoryAverage : 0;
+                                        var endValue = YearStats.ContainsKey(maxYear) ? YearStats[maxYear].MandatoryAverage : 0;
+
+                                        <td class="text-center">
+                                            @GetChangeIndicator(startValue, endValue)
+                                        </td>
+                                    }
                                 </tr>
                                 <tr>
                                     <td>Chosen Subject Average</td>
                                     @foreach (var year in SelectedYears.OrderBy(y => y))
                                     {
-                                        <td class="text-center">@YearStats[year].ChosenAverage.ToString("F2")</td>
+                                        <td class="text-center">@(YearStats.ContainsKey(year) ? YearStats[year].ChosenAverage.ToString("F2") : "0.00")</td>
                                     }
-                                    <td class="text-center">
-                                        @GetChangeIndicator(YearStats[SelectedYears.Min()].ChosenAverage,
-                                                 YearStats[SelectedYears.Max()].ChosenAverage)
-                                    </td>
+                                    @if (SelectedYears.Count == 2)
+                                    {
+                                        var minYear = SelectedYears.Min();
+                                        var maxYear = SelectedYears.Max();
+                                        var startValue = YearStats.ContainsKey(minYear) ? YearStats[minYear].ChosenAverage : 0;
+                                        var endValue = YearStats.ContainsKey(maxYear) ? YearStats[maxYear].ChosenAverage : 0;
+
+                                        <td class="text-center">
+                                            @GetChangeIndicator(startValue, endValue)
+                                        </td>
+                                    }
                                 </tr>
                             </tbody>
                         </table>
@@ -317,8 +372,42 @@
 
     private async Task LoadComparisonData()
     {
-        if (!SelectedYears.Any())
-            return;
+        if (SelectedYears.Count != 2)
+        {
+            // Ensure exactly 2 years are selected
+            if (SelectedYears.Count < 2)
+            {
+                // Select the most recent year if available
+                var availableYears = AvailableYears.OrderByDescending(y => y).ToList();
+                if (availableYears.Count > 0 && !SelectedYears.Contains(availableYears[0]))
+                {
+                    SelectedYears.Add(availableYears[0]);
+                }
+
+                // If we still need one more year
+                if (SelectedYears.Count < 2 && availableYears.Count > 1)
+                {
+                    for (int i = 1; i < availableYears.Count; i++)
+                    {
+                        if (!SelectedYears.Contains(availableYears[i]))
+                        {
+                            SelectedYears.Add(availableYears[i]);
+                            break;
+                        }
+                    }
+                }
+            }
+            else if (SelectedYears.Count > 2)
+            {
+                // Keep only the two most recent years
+                var yearsToKeep = SelectedYears.OrderByDescending(y => y).Take(2).ToList();
+                SelectedYears.Clear();
+                foreach (var year in yearsToKeep)
+                {
+                    SelectedYears.Add(year);
+                }
+            }
+        }
 
         IsLoading = true;
         YearData.Clear();
@@ -347,12 +436,15 @@
 
             foreach (var group in specializationGroups)
             {
-                stats.SpecializationStatistics[group.Key] = new SpecializationStats
-                    {
-                        Count = group.Count(),
-                        Passed = group.Count(r => r.Passed == 1),
-                        AverageScore = group.Average(r => r.Average)
-                    };
+                if (group.Key != null)
+                {
+                    stats.SpecializationStatistics[group.Key] = new SpecializationStats
+                        {
+                            Count = group.Count(),
+                            Passed = group.Count(r => r.Passed == 1),
+                            AverageScore = group.Average(r => r.Average)
+                        };
+                }
             }
 
             // Calculate county statistics
@@ -362,12 +454,15 @@
 
             foreach (var group in countyGroups)
             {
-                stats.CountyStatistics[group.Key] = new CountyStats
-                    {
-                        Count = group.Count(),
-                        Passed = group.Count(r => r.Passed == 1),
-                        AverageScore = group.Average(r => r.Average)
-                    };
+                if (group.Key != null)
+                {
+                    stats.CountyStatistics[group.Key] = new CountyStats
+                        {
+                            Count = group.Count(),
+                            Passed = group.Count(r => r.Passed == 1),
+                            AverageScore = group.Average(r => r.Average)
+                        };
+                }
             }
 
             YearStats[year] = stats;

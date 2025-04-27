@@ -12,7 +12,7 @@
 
 <div class="container">
     <h1 class="mb-4">Upload New BAC Results</h1>
-
+    
     <div class="row">
         <div class="col-md-6">
             <div class="card">
@@ -24,7 +24,7 @@
                         Upload a CSV file containing BAC examination results.
                         The file should have the appropriate format with all required fields.
                     </p>
-
+                    
                     <div class="mb-3">
                         <label for="year-select" class="form-label">Select Year</label>
                         <select id="year-select" class="form-select" @bind="SelectedYear">
@@ -34,18 +34,18 @@
                             }
                         </select>
                     </div>
-
+                    
                     <div class="mb-3">
                         <InputFile OnChange="OnFileSelected" class="form-control" accept=".csv" />
                     </div>
-
+                    
                     @if (!string.IsNullOrEmpty(ValidationMessage))
                     {
                         <div class="alert @ValidationCssClass">
                             @ValidationMessage
                         </div>
                     }
-
+                    
                     <button class="btn btn-primary" @onclick="UploadFile" disabled="@(!IsFileSelected || IsUploading)">
                         @if (IsUploading)
                         {
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header bg-info text-white">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="card-body">
                     <p>The CSV file should include the following columns:</p>
-
+                    
                     <ul class="list-group mb-3">
                         <li class="list-group-item">code - Unique identifier</li>
                         <li class="list-group-item">school - School short name</li>
@@ -85,7 +85,7 @@
                         <li class="list-group-item">full_school_name - Complete school name</li>
                         <li class="list-group-item">... and other related fields</li>
                     </ul>
-
+                    
                     <p>
                         <strong>Example:</strong><br />
                         <small class="text-muted">
@@ -96,10 +96,10 @@
             </div>
         </div>
     </div>
-
+    
     <div class="mt-4">
         <h3>Available Data Files</h3>
-
+        
         @if (IsLoading)
         {
             <div class="spinner-border" role="status">
@@ -199,10 +199,10 @@
             {
                 ValidationMessage = "File uploaded successfully!";
                 ValidationCssClass = "alert-success";
-
+                
                 // Refresh available years
                 AvailableYears = await CsvService.GetAvailableYearsAsync();
-
+                
                 // Clear selected file
                 SelectedFile = null;
             }
