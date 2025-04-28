@@ -1,0 +1,360 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\pages\\bacupload.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\pages\\bacupload.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\services\\csvimporthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:services\\csvimporthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\pages\\baccompare.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\pages\\baccompare.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\services\\csvservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:services\\csvservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\pages\\filecheck.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\pages\\filecheck.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\services\\csvsetuphelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:services\\csvsetuphelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\shared\\bacstatistics.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\shared\\bacstatistics.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\pages\\bacresults.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\pages\\bacresults.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\pages\\bacdetailedanalysis.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\pages\\bacdetailedanalysis.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\projekt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:projekt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:wwwroot\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\css\\custom.css||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:wwwroot\\css\\custom.css||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|c:\\sapientia emte\\negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\bootstrap\\bootstrap.min.css.map||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{1879E4F7-4120-4FAD-BB94-C9092CD4CD39}|projekt.csproj|solutionrelative:wwwroot\\bootstrap\\bootstrap.min.css.map||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BacDetailedAnalysis.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\BacDetailedAnalysis.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\BacDetailedAnalysis.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\BacDetailedAnalysis.razor",
+              "RelativeToolTip": "Components\\Pages\\BacDetailedAnalysis.razor",
+              "ViewState": "AgIAABYBAAAAAAAAAAAmwDsBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:11:22.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BacUpload.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\BacUpload.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\BacUpload.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\BacUpload.razor",
+              "RelativeToolTip": "Components\\Pages\\BacUpload.razor",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAYwBEBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:22:38.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BacStatistics.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Shared\\BacStatistics.razor",
+              "RelativeDocumentMoniker": "Components\\Shared\\BacStatistics.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Shared\\BacStatistics.razor",
+              "RelativeToolTip": "Components\\Shared\\BacStatistics.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:19:35.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BacCompare.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\BacCompare.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\BacCompare.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\BacCompare.razor",
+              "RelativeToolTip": "Components\\Pages\\BacCompare.razor",
+              "ViewState": "AgIAACQCAAAAAAAAAAAYwD0CAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:11:45.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CsvImportHelper.cs",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Services\\CsvImportHelper.cs",
+              "RelativeDocumentMoniker": "Services\\CsvImportHelper.cs",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Services\\CsvImportHelper.cs",
+              "RelativeToolTip": "Services\\CsvImportHelper.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAmwF8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T16:07:37.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAmwEQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T16:15:06.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CsvService.cs",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Services\\CsvService.cs",
+              "RelativeDocumentMoniker": "Services\\CsvService.cs",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Services\\CsvService.cs",
+              "RelativeToolTip": "Services\\CsvService.cs",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAYwAgBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T16:16:41.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CsvSetupHelper.cs",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Services\\CsvSetupHelper.cs",
+              "RelativeDocumentMoniker": "Services\\CsvSetupHelper.cs",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Services\\CsvSetupHelper.cs",
+              "RelativeToolTip": "Services\\CsvSetupHelper.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAmwHIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T16:07:51.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAmwDQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:18:08.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FileCheck.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\FileCheck.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\FileCheck.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\FileCheck.razor",
+              "RelativeToolTip": "Components\\Pages\\FileCheck.razor",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAYwHwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:44:01.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BacResults.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\BacResults.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\BacResults.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\BacResults.razor",
+              "RelativeToolTip": "Components\\Pages\\BacResults.razor",
+              "ViewState": "AgIAAOoAAAAAAAAAAAAmwA8BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:10:53.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "Components\\_Imports.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\_Imports.razor",
+              "RelativeToolTip": "Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:34:57.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Counter.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\Counter.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Counter.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\Counter.razor",
+              "RelativeToolTip": "Components\\Pages\\Counter.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:34:14.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "projekt",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\projekt.csproj",
+              "RelativeDocumentMoniker": "projekt.csproj",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\projekt.csproj",
+              "RelativeToolTip": "projekt.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-27T16:05:55.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\App.razor",
+              "RelativeDocumentMoniker": "Components\\App.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\App.razor",
+              "RelativeToolTip": "Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:19:18.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "custom.css",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\css\\custom.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\custom.css",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\css\\custom.css",
+              "RelativeToolTip": "wwwroot\\css\\custom.css",
+              "ViewState": "AgIAACMAAAAAAAAAAAAYwFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-27T16:18:52.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "custom.css",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\css\\custom.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\custom.css",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\css\\custom.css",
+              "RelativeToolTip": "wwwroot\\css\\custom.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-27T16:18:36.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwCUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T16:18:22.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "bootstrap.min.css.map",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+              "RelativeDocumentMoniker": "wwwroot\\bootstrap\\bootstrap.min.css.map",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+              "RelativeToolTip": "wwwroot\\bootstrap\\bootstrap.min.css.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-27T15:50:16.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "Components\\Routes.razor",
+              "ToolTip": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\Components\\Routes.razor",
+              "RelativeToolTip": "Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T15:40:13.84Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
