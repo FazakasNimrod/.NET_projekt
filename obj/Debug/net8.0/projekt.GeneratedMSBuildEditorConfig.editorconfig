@@ -36,14 +36,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCYWNSZXN1bHRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/BacUpload.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCYWNVcGxvYWQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,10 +46,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/SAPIENTIA EMTE/Negyedik ev/2nd_semester/.net_2025/projekt/projekt/Components/Routes.razor]

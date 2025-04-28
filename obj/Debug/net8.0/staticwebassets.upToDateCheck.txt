@@ -12,5 +12,4 @@ wwwroot\data\2020_final.csv
 wwwroot\data\2021_final.csv
 wwwroot\data\2022_final.csv
 wwwroot\data\2023_final.csv
-wwwroot\data\2025_final.csv
 wwwroot\favicon.png

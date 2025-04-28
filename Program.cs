@@ -2,7 +2,6 @@ using projekt.Components;
 using projekt.Services;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.AspNetCore.Http.Features;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,20 +16,6 @@ builder.Services.AddRazorComponents()
 
 // Register our CsvService
 builder.Services.AddScoped<CsvService>();
-
-// Configure request body size limits for file uploads
-builder.WebHost.ConfigureKestrel(options =>
-{
-    options.Limits.MaxRequestBodySize = 104857600; // 100 MB
-});
-
-// Configure form options for larger files
-builder.Services.Configure<FormOptions>(options =>
-{
-    options.MultipartBodyLengthLimit = 104857600; // 100 MB
-    options.ValueLengthLimit = int.MaxValue;
-    options.MultipartHeadersLengthLimit = int.MaxValue;
-});
 
 var app = builder.Build();
 
@@ -51,16 +36,12 @@ app.UseAntiforgery();
 var logger = app.Services.GetRequiredService<ILogger<Program>>();
 logger.LogInformation($"WebRootPath: {app.Environment.WebRootPath}");
 
-// Set up sample data for development
-try
+// Ensure data directory exists
+string dataDir = Path.Combine(app.Environment.WebRootPath, "data");
+if (!Directory.Exists(dataDir))
 {
-    logger.LogInformation("Setting up CSV sample data");
-    CsvSetupHelper.EnsureDataDirectoryAndSampleFiles(app.Environment);
-    logger.LogInformation("Sample data setup completed");
-}
-catch (Exception ex)
-{
-    logger.LogError(ex, "Error setting up sample data");
+    Directory.CreateDirectory(dataDir);
+    logger.LogInformation($"Created data directory: {dataDir}");
 }
 
 app.MapRazorComponents<App>()

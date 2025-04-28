@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+sZRDkBNdaq0KzNsPUOuWrW66m4Ye9VbQ52qU7zVZYg=",
+  "Hash": "IOgwUtdbDlos0VaFg0wAZkotr0i/QaDfXb84OzYGqpQ=",
   "Source": "projekt",
   "BasePath": "_content/projekt",
   "Mode": "Default",
@@ -351,27 +351,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\data\\2023_final.csv"
-    },
-    {
-      "Identity": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2025_final.csv",
-      "SourceId": "projekt",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\",
-      "BasePath": "_content/projekt",
-      "RelativePath": "data/2025_final#[.{fingerprint}]?.csv",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "8groq15oom",
-      "Integrity": "CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\data\\2025_final.csv"
     },
     {
       "Identity": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\favicon.png",
@@ -1485,7 +1464,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 19:18:36 GMT"
+          "Value": "Sun, 27 Apr 2025 20:08:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1530,89 +1509,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 19:18:36 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34="
-        }
-      ]
-    },
-    {
-      "Route": "data/2025_final.8groq15oom.csv",
-      "AssetFile": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2025_final.csv",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "45511403"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/csv"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:03:32 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "8groq15oom"
-        },
-        {
-          "Name": "label",
-          "Value": "data/2025_final.csv"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34="
-        }
-      ]
-    },
-    {
-      "Route": "data/2025_final.csv",
-      "AssetFile": "C:\\SAPIENTIA EMTE\\Negyedik ev\\2nd_semester\\.net_2025\\projekt\\projekt\\wwwroot\\data\\2025_final.csv",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "45511403"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/csv"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"CBFIaCVQXxmn10eN8l9/c1ETaOY+bRnG4WzvCHLON34=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:03:32 GMT"
+          "Value": "Sun, 27 Apr 2025 20:08:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1731,7 +1628,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:07:44 GMT"
+          "Value": "Mon, 28 Apr 2025 07:46:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1768,7 +1665,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:07:44 GMT"
+          "Value": "Mon, 28 Apr 2025 07:46:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1813,7 +1710,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:07:44 GMT"
+          "Value": "Mon, 28 Apr 2025 07:46:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1858,7 +1755,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:07:44 GMT"
+          "Value": "Mon, 28 Apr 2025 07:46:49 GMT"
         },
         {
           "Name": "Cache-Control",
