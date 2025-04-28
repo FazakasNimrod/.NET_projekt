@@ -119,7 +119,7 @@
                                         </td>
                                         <td>@result.Average.ToString("F2")</td>
                                         <td>
-                                            @if (result.Passed == 1)
+                                            @if (result.Passed == 0)
                                             {
                                                 <span class="badge bg-success">Yes</span>
                                             }
@@ -231,7 +231,7 @@
                         City = g.First().City ?? "Unknown",
                         County = g.First().County ?? "Unknown",
                         Average = g.Average(r => r.Average),
-                        PassRate = (double)g.Count(r => r.Passed == 1) / g.Count() * 100,
+                        PassRate = (double)g.Count(r => r.Passed == 0) / g.Count() * 100,
                         StudentCount = g.Count()
                     })
                 .OrderByDescending(s => s.Average)

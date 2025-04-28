@@ -422,7 +422,7 @@
             var stats = new YearStatistics
                 {
                     TotalCount = results.Count,
-                    PassedCount = results.Count(r => r.Passed == 1),
+                    PassedCount = results.Count(r => r.Passed == 0),
                     AverageScore = results.Any() ? results.Average(r => r.Average) : 0,
                     RomanianAverage = results.Any() ? results.Average(r => r.RomanianGradeFinal) : 0,
                     MandatoryAverage = results.Any() ? results.Average(r => r.MandatoryGradeFinal) : 0,
@@ -441,7 +441,7 @@
                     stats.SpecializationStatistics[group.Key] = new SpecializationStats
                         {
                             Count = group.Count(),
-                            Passed = group.Count(r => r.Passed == 1),
+                            Passed = group.Count(r => r.Passed == 0),
                             AverageScore = group.Average(r => r.Average)
                         };
                 }
@@ -459,7 +459,7 @@
                     stats.CountyStatistics[group.Key] = new CountyStats
                         {
                             Count = group.Count(),
-                            Passed = group.Count(r => r.Passed == 1),
+                            Passed = group.Count(r => r.Passed == 0),
                             AverageScore = group.Average(r => r.Average)
                         };
                 }
